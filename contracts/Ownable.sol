@@ -2,7 +2,7 @@
 pragma solidity ^0.8.7;
 
 contract Ownable {
-
+    
     address private owner;
     
     event OwnerSet(address indexed oldOwner, address indexed newOwner);
@@ -25,4 +25,5 @@ contract Ownable {
     function getOwner() external view returns (address) {
         return owner;
     }
+    
 }
