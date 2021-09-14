@@ -1,11 +1,15 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.7;
 
-// import './Killable.sol';
-import './Pausable.sol';
+import './Killable.sol';
 
-// contract DepositWithdraw is Killable {
-contract DepositWithdraw is Pausable {
+contract DepositWithdraw is Killable {
+
+    bool constant private INITIAL_PAUSED_STATE = false;
+
+    constructor() 
+        Killable(INITIAL_PAUSED_STATE)
+    {}
 
     function withdraw() public {
         payable(msg.sender).transfer(getBalance());
