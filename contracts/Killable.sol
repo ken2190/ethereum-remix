@@ -8,9 +8,8 @@ contract Killable is Pausable {
     event LogKill(address sender, address recipient, uint balance);
 
     constructor(bool initialPausedState) 
-        payable 
         Pausable(initialPausedState)
-    { }
+    {}
 
     function killContract() 
         isOwner 
